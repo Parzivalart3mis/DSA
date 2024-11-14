@@ -45,29 +45,40 @@ import java.util.Arrays;
 //    }
 //}
 
-////Top-down approach
+//Top-down approach
 public class Knapsack {
+    // 2D array to store the maximum profit for sub-problems
     int[][] t;
+
+    // Method to calculate maximum profit for a given weight limit `w` and `n` items
     public int knapsack(int[] wt, int[] val, int w, int n) {
-        t = new int[n+1][w+1];
-        for (int i=0;i<n+1;i++) {
-            for (int j=0;j<w+1;j++) {
+        // Initialize the 2D DP table with dimensions (n+1) x (w+1)
+        t = new int[n + 1][w + 1];
+
+        // Base case initialization: if weight or items are 0, profit is 0
+        for (int i = 0; i < n + 1; i++) {
+            for (int j = 0; j < w + 1; j++) {
                 if (i == 0 || j == 0) {
                     t[i][j] = 0;
                 }
             }
         }
 
-        for (int i=1;i<n+1;i++) {
-            for (int j=1;j<w+1;j++) {
-                if(wt[i-1]<=j){
-                    t[i][j] = max(val[i-1] + t[i-1][j-wt[i-1]], t[i-1][j]);
-                }
-                else {
-                    t[i][j] = t[i-1][j];
+        // Fill the DP table following the top-down approach
+        for (int i = 1; i < n + 1; i++) {
+            for (int j = 1; j < w + 1; j++) {
+                // Check if the current item's weight can fit in the knapsack capacity `j`
+                if (wt[i - 1] <= j) {
+                    // If yes, we have two choices: include or exclude the item
+                    // We take the maximum of both choices
+                    t[i][j] = max(val[i - 1] + t[i - 1][j - wt[i - 1]], t[i - 1][j]);
+                } else {
+                    // If the item can't fit, exclude it from the knapsack
+                    t[i][j] = t[i - 1][j];
                 }
             }
         }
+        // The maximum profit for capacity `w` with `n` items is stored in `t[n][w]`
         return t[n][w];
     }
 }
