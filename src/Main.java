@@ -32,5 +32,13 @@ public class Main {
         Subset_sum subsetSumSolver = new Subset_sum();
         boolean subsetResult = subsetSumSolver.subset(subsetArray, subsetSum, subsetArray.length);
         System.out.println("Is there a subset with sum " + subsetSum + "? " + (subsetResult ? "Yes" : "No"));
+
+        // --------------------------------------------------------------------------
+
+        // Testing Equal Sum Partition Problem
+        int[] arr = {1, 5, 11, 5}; // Example array for equal sum partition
+        Equal_sum_partition equalSumPartitionSolver = new Equal_sum_partition();
+        boolean equalPartitionResult = equalSumPartitionSolver.equalPartition(arr);
+        System.out.println("Can the array be partitioned into two subsets with equal sum? " + (equalPartitionResult ? "Yes" : "No"));
     }
 }
