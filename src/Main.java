@@ -40,5 +40,14 @@ public class Main {
         Equal_sum_partition equalSumPartitionSolver = new Equal_sum_partition();
         boolean equalPartitionResult = equalSumPartitionSolver.equalPartition(arr);
         System.out.println("Can the array be partitioned into two subsets with equal sum? " + (equalPartitionResult ? "Yes" : "No"));
+
+        // --------------------------------------------------------------------------
+
+        // Testing Count Subset Sum Problem
+        int[] countSubsetArray = {2, 3, 5, 6, 8, 10}; // Example array for counting subsets
+        int countSubsetSum = 10; // Target sum to check
+        Count_subset_sum countSubsetSumSolver = new Count_subset_sum();
+        int countSubsetResult = countSubsetSumSolver.subset(countSubsetArray, countSubsetSum, countSubsetArray.length);
+        System.out.println("Number of subsets with sum " + countSubsetSum + ": " + countSubsetResult);
     }
 }
