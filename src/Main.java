@@ -52,10 +52,19 @@ public class Main {
 
         // --------------------------------------------------------------------------
 
-        // Testing Minimum Subset Sum Problem
-        int[] nums = {1, 6, 11, 5}; // Example array for counting subsets
+        // Testing Minimum Subset Sum Difference Problem
+        int[] nums = {1, 6, 11, 5}; // Example array for minimum subset sum difference
         Minimum_subset_sum_diff minimumDiff = new Minimum_subset_sum_diff();
         int minimumDiffResult = minimumDiff.minimumDifference(nums);
         System.out.println("Minimum subset sum difference: " + minimumDiffResult);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Count Subset with Given Difference Problem
+        int[] diffArray = {1, 1, 2, 3}; // Example array for count subsets with given difference
+        int diff = 1; // Target difference
+        Count_subset_with_given_diff countSubsetDiffSolver = new Count_subset_with_given_diff();
+        int countDiffResult = countSubsetDiffSolver.countSubsets(diffArray, diff);
+        System.out.println("Number of subsets with the given difference (" + diff + "): " + countDiffResult);
     }
 }
