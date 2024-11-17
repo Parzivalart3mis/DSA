@@ -1,7 +1,6 @@
 package DP.Knapsack.Types;
 
 import java.util.ArrayList;
-import static java.lang.Math.min;
 
 public class Minimum_subset_sum_diff {
     boolean[][] t;
@@ -44,7 +43,7 @@ public class Minimum_subset_sum_diff {
         }
 
         for(int i=0;i<arr.size();i++) {
-            mn = min(mn, range-(2* arr.get(i)));
+            mn = Math.min(mn, range-(2* arr.get(i)));
         }
         return mn;
     }
