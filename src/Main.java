@@ -49,5 +49,13 @@ public class Main {
         Count_subset_sum countSubsetSumSolver = new Count_subset_sum();
         int countSubsetResult = countSubsetSumSolver.subset(countSubsetArray, countSubsetSum, countSubsetArray.length);
         System.out.println("Number of subsets with sum " + countSubsetSum + ": " + countSubsetResult);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Minimum Subset Sum Problem
+        int[] nums = {1, 6, 11, 5}; // Example array for counting subsets
+        Minimum_subset_sum_diff minimumDiff = new Minimum_subset_sum_diff();
+        int minimumDiffResult = minimumDiff.minimumDifference(nums);
+        System.out.println("Minimum subset sum difference: " + minimumDiffResult);
     }
 }
