@@ -52,7 +52,7 @@ public class Main {
 
         // --------------------------------------------------------------------------
 
-        // Testing Minimum Subset Sum Difference Problem
+        // Testing Minimum Subset Sum Problem
         int[] nums = {1, 6, 11, 5}; // Example array for minimum subset sum difference
         Minimum_subset_sum_diff minimumDiff = new Minimum_subset_sum_diff();
         int minimumDiffResult = minimumDiff.minimumDifference(nums);
@@ -60,11 +60,20 @@ public class Main {
 
         // --------------------------------------------------------------------------
 
-        // Testing Count Subset with Given Difference Problem
-        int[] diffArray = {1, 1, 2, 3}; // Example array for count subsets with given difference
-        int diff = 1; // Target difference
-        Count_subset_with_given_diff countSubsetDiffSolver = new Count_subset_with_given_diff();
-        int countDiffResult = countSubsetDiffSolver.countSubsets(diffArray, diff);
-        System.out.println("Number of subsets with the given difference (" + diff + "): " + countDiffResult);
+        // Testing Count Subsets with Given Difference
+        int[] diffArray = {1, 1, 2, 3};
+        int diff = 1;
+        Count_subset_with_given_diff countDiff = new Count_subset_with_given_diff();
+        int countDiffResult = countDiff.countSubsets(diffArray, diff);
+        System.out.println("Number of subsets with given difference (" + diff + "): " + countDiffResult);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Target Sum Problem
+        int[] targetArray = {1, 1, 1, 1, 1};
+        int target = 3;
+        Target_Sum targetSumSolver = new Target_Sum();
+        int targetSumResult = targetSumSolver.findTargetSumWays(targetArray, target);
+        System.out.println("Number of ways to assign symbols to make target " + target + ": " + targetSumResult);
     }
 }
