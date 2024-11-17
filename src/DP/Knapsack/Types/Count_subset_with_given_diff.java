@@ -5,11 +5,15 @@ public class Count_subset_with_given_diff {
     public int countSubsets(int[] arr, int diff) {
         int n = arr.length;
         int sum_arr = 0;
-        int s1;
         for (int i : arr) {
             sum_arr += i;
         }
-        s1 = (sum_arr + diff)/2;
+        // If (sum_arr + diff) is odd, no valid partition exists
+        if ((sum_arr + diff) % 2 != 0) {
+            return 0;
+        }
+
+        int s1 = (sum_arr + diff) / 2;
 
         t = new int[n + 1][s1 + 1];
         for (int i = 0; i < n+1; i++) {
@@ -17,7 +21,7 @@ public class Count_subset_with_given_diff {
                 if (i==0) {
                     t[i][j] = 0;
                 }
-                else if (j==0) {
+                if (j==0) {
                     t[i][j] = 1;
                 }
             }
