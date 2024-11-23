@@ -1,6 +1,6 @@
-package DP.Knapsack;
+package DP.Knapsack.Types;
 
-public class Target_Sum {
+public class Target_sum {
     int[][] t;
     public int findTargetSumWays(int[] nums, int target) {
         int n = nums.length;

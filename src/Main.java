@@ -1,5 +1,6 @@
 import DP.Knapsack.*;
 import DP.Knapsack.Types.*;
+import DP.Knapsack.Unbounded_Knapsack.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,6 +25,8 @@ public class Main {
         int topdownResult = topdown.knapsack(weights, values, capacity, n);
         System.out.println("Maximum profit using Top-down approach: " + topdownResult);
 
+        // --------------------------------------------------------------------------
+        System.out.println("--------------------------------------------------------------------------");
         // --------------------------------------------------------------------------
 
         // Testing Subset Sum Problem
@@ -72,8 +75,34 @@ public class Main {
         // Testing Target Sum Problem
         int[] targetArray = {1, 1, 1, 1, 1};
         int target = 3;
-        Target_Sum targetSumSolver = new Target_Sum();
+        Target_sum targetSumSolver = new Target_sum();
         int targetSumResult = targetSumSolver.findTargetSumWays(targetArray, target);
         System.out.println("Number of ways to assign symbols to make target " + target + ": " + targetSumResult);
+
+        // --------------------------------------------------------------------------
+        System.out.println("--------------------------------------------------------------------------");
+        // --------------------------------------------------------------------------
+
+        // Unbounded Knapsack
+        int[] unbounded_weights = {1, 3, 4, 5};
+        int[] unbounded_values = {6, 1, 7, 7};
+        int unbounded_capacity = 8;
+
+        Unbounded_knapsack unboundedKnapsack = new Unbounded_knapsack();
+        int maxProfit = unboundedKnapsack.unbound_knapsack(unbounded_weights, unbounded_values, unbounded_capacity, unbounded_weights.length);
+
+        System.out.println("Maximum profit in Unbounded Knapsack: " + maxProfit);
+
+        // --------------------------------------------------------------------------
+
+        // Rod Cutting Problem
+        int[] rodLengths = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] rodPrices = {1, 5, 8, 9, 10, 17, 17, 20};
+        int rodLength = 8;
+
+        Rod_cutting rodCutting = new Rod_cutting();
+        int maxProfitRodCutting = rodCutting.rod(rodLengths, rodPrices, rodLength);
+
+        System.out.println("Maximum profit in Rod Cutting: " + maxProfitRodCutting);
     }
 }
