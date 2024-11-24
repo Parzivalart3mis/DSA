@@ -104,5 +104,16 @@ public class Main {
         int maxProfitRodCutting = rodCutting.rod(rodLengths, rodPrices, rodLength);
 
         System.out.println("Maximum profit in Rod Cutting: " + maxProfitRodCutting);
+
+        // --------------------------------------------------------------------------
+
+        // Coin Change Problem 1: Maximum number of ways to make a sum
+        int[] coinDenominations = {1, 2, 3}; // Coin denominations
+        int targetAmount = 5; // Target sum to achieve
+
+        Coin_change_1 coinChange = new Coin_change_1();
+        int numWays = coinChange.maxCoinChange(coinDenominations, targetAmount);
+
+        System.out.println("Number of ways to make amount " + targetAmount + " using given coins: " + numWays);
     }
 }
