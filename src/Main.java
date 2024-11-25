@@ -138,11 +138,11 @@ public class Main {
         // Sample input for LCS
         String text1 = "abcde"; // String 1
         String text2 = "ace"; // String 2
-        int n_LCS = text1.length(); // Length of text1
-        int m_LCS = text2.length(); // Length of text2
+        int m_LCS = text1.length(); // Length of text1
+        int n_LCS = text2.length(); // Length of text2
 
         // Testing Recursion approach
-        int recursionLCSLength = recursion_LCS.longestCommonSubsequence(text1, text2, n_LCS, m_LCS);
+        int recursionLCSLength = recursion_LCS.longestCommonSubsequence(text1, text2, m_LCS, n_LCS);
         System.out.println("Length of Longest Common Subsequence using Recursion approach: " + recursionLCSLength);
     }
 }
