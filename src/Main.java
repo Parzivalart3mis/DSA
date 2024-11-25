@@ -115,5 +115,16 @@ public class Main {
         int numWays = coinChange.maxCoinChange(coinDenominations, targetAmount);
 
         System.out.println("Number of ways to make amount " + targetAmount + " using given coins: " + numWays);
+
+        // --------------------------------------------------------------------------
+
+        // Coin Change Problem 2: Minimum number of coins to make a sum
+        int[] coinDenominations2 = {1, 2, 3}; // Coin denominations
+        int targetAmount2 = 5; // Target sum to achieve
+
+        Coin_change_2 coinChange2 = new Coin_change_2();
+        int minCoins = coinChange2.minCoinChange(coinDenominations2, targetAmount2);
+
+        System.out.println("Minimum number of coins needed to make amount " + targetAmount2 + ": " + minCoins);
     }
 }
