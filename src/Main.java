@@ -1,6 +1,7 @@
 import DP.Knapsack.*;
 import DP.Knapsack.Types.*;
 import DP.Knapsack.Unbounded_Knapsack.*;
+import DP.LCS.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,18 +12,18 @@ public class Main {
         int n = weights.length;       // number of items
 
         // Testing Recursion approach
-        Recursion recursion = new Recursion();
-        int recursionResult = recursion.knapsack(weights, values, capacity, n);
+        Recursion_knapsack recursion_knapsack = new Recursion_knapsack();
+        int recursionResult = recursion_knapsack.knapsack(weights, values, capacity, n);
         System.out.println("Maximum profit using Recursion approach: " + recursionResult);
 
         // Testing Memoization approach
-        Memoization memoization = new Memoization();
-        int memoizationResult = memoization.knapsack(weights, values, capacity, n);
+        Memoization_knapsack memoization_knapsack = new Memoization_knapsack();
+        int memoizationResult = memoization_knapsack.knapsack(weights, values, capacity, n);
         System.out.println("Maximum profit using Memoization approach: " + memoizationResult);
 
         // Testing Top-down approach
-        Topdown topdown = new Topdown();
-        int topdownResult = topdown.knapsack(weights, values, capacity, n);
+        Topdown_knapsack topdown_knapsack = new Topdown_knapsack();
+        int topdownResult = topdown_knapsack.knapsack(weights, values, capacity, n);
         System.out.println("Maximum profit using Top-down approach: " + topdownResult);
 
         // --------------------------------------------------------------------------
@@ -126,5 +127,22 @@ public class Main {
         int minCoins = coinChange2.minCoinChange(coinDenominations2, targetAmount2);
 
         System.out.println("Minimum number of coins needed to make amount " + targetAmount2 + ": " + minCoins);
+
+        // --------------------------------------------------------------------------
+        System.out.println("--------------------------------------------------------------------------");
+        // --------------------------------------------------------------------------
+
+        // Create an instance of the Recursion class
+        Recursion_LCS recursion_LCS = new Recursion_LCS();
+
+        // Sample input for LCS
+        String text1 = "abcde"; // String 1
+        String text2 = "ace"; // String 2
+        int n_LCS = text1.length(); // Length of text1
+        int m_LCS = text2.length(); // Length of text2
+
+        // Testing Recursion approach
+        int recursionLCSLength = recursion_LCS.longestCommonSubsequence(text1, text2, n_LCS, m_LCS);
+        System.out.println("Length of Longest Common Subsequence using Recursion approach: " + recursionLCSLength);
     }
 }

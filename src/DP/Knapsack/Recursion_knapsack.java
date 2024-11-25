@@ -2,7 +2,7 @@ package DP.Knapsack;
 import static java.lang.Math.max;
 
 //Recursion
-public class Recursion {
+public class Recursion_knapsack {
     public int knapsack(int[] wt, int[] val, int w, int n) {
         if (w == 0 || n == 0) {
             return 0;

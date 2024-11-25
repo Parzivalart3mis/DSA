@@ -3,7 +3,7 @@ import static java.lang.Math.max;
 
 //Top-down approach
 //Changing recursion function calls to matrix "t" iterations
-public class Topdown {
+public class Topdown_knapsack {
     int[][] t;
     public int knapsack(int[] wt, int[] val, int w, int n) {
         t = new int[n+1][w+1];

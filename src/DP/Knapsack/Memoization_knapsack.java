@@ -3,12 +3,12 @@ import static java.lang.Math.max;
 import java.util.Arrays;
 
 //Memoization
-public class Memoization {
+public class Memoization_knapsack {
     int n_max = 102; // n < 100
     int w_max = 1002; // w < 1000
     int[][] t;
 
-    public Memoization() {
+    public Memoization_knapsack() {
         t = new int[n_max][w_max];
         for (int i = 0; i < n_max; i++) {
             Arrays.fill(t[i], -1); // Using Arrays.fill to initialize each row to -1

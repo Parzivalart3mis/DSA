@@ -24,7 +24,7 @@ public class Coin_change_2 {
             }
         }
 
-        // Fill the DP table for the first coin
+        // Fill the DP table for the first coin (using coin[0] because checking only for length 1)
         for (int j = 1; j < amount+1; j++) {
             if (j % coins[0] == 0) {
                 t[1][j] = j / coins[0];
