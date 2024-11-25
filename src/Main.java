@@ -144,5 +144,10 @@ public class Main {
         // Testing Recursion approach
         int recursionLCSLength = recursion_LCS.longestCommonSubsequence(text1, text2, m_LCS, n_LCS);
         System.out.println("Length of Longest Common Subsequence using Recursion approach: " + recursionLCSLength);
+
+        // Testing Memoization approach
+        Memoization_LCS memoizationLcs = new Memoization_LCS();
+        int memoizationLCSLength = memoizationLcs.longestCommonSubsequence(text1, text2, m_LCS, n_LCS);
+        System.out.println("Length of Longest Common Subsequence using Memoization approach: " + memoizationLCSLength);
     }
 }
