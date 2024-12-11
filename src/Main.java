@@ -4,6 +4,7 @@ import DP.Knapsack.Unbounded_Knapsack.*;
 import DP.LCS.*;
 import DP.LCS.Types.Longest_common_substring;
 import DP.LCS.Types.Print_LCS;
+import DP.LCS.Types.Shortest_common_supersequence;
 
 public class Main {
     public static void main(String[] args) {
@@ -180,5 +181,17 @@ public class Main {
         Print_LCS printLCS = new Print_LCS();
         String lcsResult = printLCS.print_LCS(lcsText1, lcsText2, lcsM, lcsN);
         System.out.println("Longest Common Subsequence: " + lcsResult);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Shortest Common Supersequence
+        String str1 = "AGGTAB";
+        String str2 = "GXTXAYB";
+        int str1_len = str1.length();
+        int str2_len = str2.length();
+
+        Shortest_common_supersequence shortestCommonSupersequence = new Shortest_common_supersequence();
+        int shortestCommonSuperstringLength = shortestCommonSupersequence.shortestCommonSupersequence(str1, str2, str1_len, str2_len);
+        System.out.println("Length of Shortest Common Supersequence: " + shortestCommonSuperstringLength);
     }
 }
