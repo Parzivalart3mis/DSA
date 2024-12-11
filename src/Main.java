@@ -3,6 +3,7 @@ import DP.Knapsack.Types.*;
 import DP.Knapsack.Unbounded_Knapsack.*;
 import DP.LCS.*;
 import DP.LCS.Types.Longest_common_substring;
+import DP.LCS.Types.Print_LCS;
 
 public class Main {
     public static void main(String[] args) {
@@ -170,6 +171,14 @@ public class Main {
 
         // --------------------------------------------------------------------------
 
-        
+        // Testing Print LCS
+        String lcsText1 = "acbcf"; // String 1 for Print LCS
+        String lcsText2 = "abcdaf"; // String 2 for Print LCS
+        int lcsM = lcsText1.length(); // Length of lcsText1
+        int lcsN = lcsText2.length(); // Length of lcsText2
+
+        Print_LCS printLCS = new Print_LCS();
+        String lcsResult = printLCS.print_LCS(lcsText1, lcsText2, lcsM, lcsN);
+        System.out.println("Longest Common Subsequence: " + lcsResult);
     }
 }
