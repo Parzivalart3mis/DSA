@@ -14,19 +14,29 @@ public class Memoization_LCS {
         }
     }
 
-    public int longestCommonSubsequence(String text1, String text2, int  m, int n) {
+    public int longestCommonSubsequence(String text1, String text2, int m, int n) {
+        // Base case: if either string is empty, the LCS is 0.
         if (m == 0 || n == 0) {
             return 0;
         }
+
+        // Check if the result for the current subproblem is already computed.
         if (t[m][n] != -1) {
             return t[m][n];
         }
 
-        if (text1.charAt(m-1) == text2.charAt(n-1)) {
-            return t[m][n] = 1 + longestCommonSubsequence(text1, text2, m-1, n-1);
-        }
-        else {
-            return t[m][n] = Math.max(longestCommonSubsequence(text1, text2, m, n-1), longestCommonSubsequence(text1, text2, m-1, n));
+        // If the last characters of both strings match.
+        if (text1.charAt(m - 1) == text2.charAt(n - 1)) {
+            // Include the matching character in the LCS and solve for the remaining substrings.
+            return t[m][n] = 1 + longestCommonSubsequence(text1, text2, m - 1, n - 1);
+        } else {
+            // If the last characters do not match, find the maximum LCS by:
+            // 1. Excluding the last character of the first string.
+            // 2. Excluding the last character of the second string.
+            return t[m][n] = Math.max(
+                    longestCommonSubsequence(text1, text2, m, n - 1),
+                    longestCommonSubsequence(text1, text2, m - 1, n)
+            );
         }
     }
 }

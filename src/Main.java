@@ -132,16 +132,14 @@ public class Main {
         System.out.println("--------------------------------------------------------------------------");
         // --------------------------------------------------------------------------
 
-        // Create an instance of the Recursion class
-        Recursion_LCS recursion_LCS = new Recursion_LCS();
-
         // Sample input for LCS
-        String text1 = "abcde"; // String 1
+        String text1 = "abcabcdede"; // String 1
         String text2 = "ace"; // String 2
         int m_LCS = text1.length(); // Length of text1
         int n_LCS = text2.length(); // Length of text2
 
         // Testing Recursion approach
+        Recursion_LCS recursion_LCS = new Recursion_LCS();
         int recursionLCSLength = recursion_LCS.longestCommonSubsequence(text1, text2, m_LCS, n_LCS);
         System.out.println("Length of Longest Common Subsequence using Recursion approach: " + recursionLCSLength);
 
@@ -149,5 +147,10 @@ public class Main {
         Memoization_LCS memoizationLcs = new Memoization_LCS();
         int memoizationLCSLength = memoizationLcs.longestCommonSubsequence(text1, text2, m_LCS, n_LCS);
         System.out.println("Length of Longest Common Subsequence using Memoization approach: " + memoizationLCSLength);
+
+        // Testing Top-down approach
+        Topdown_LCS topdownLcs = new Topdown_LCS();
+        int topdownLCSLength = topdownLcs.longestCommonSubsequence(text1, text2, m_LCS, n_LCS);
+        System.out.println("Length of Longest Common Subsequence using Top-down approach: " + topdownLCSLength);
     }
 }
