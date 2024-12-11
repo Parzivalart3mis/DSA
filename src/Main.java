@@ -2,6 +2,7 @@ import DP.Knapsack.*;
 import DP.Knapsack.Types.*;
 import DP.Knapsack.Unbounded_Knapsack.*;
 import DP.LCS.*;
+import DP.LCS.Types.Longest_common_substring;
 
 public class Main {
     public static void main(String[] args) {
@@ -152,5 +153,23 @@ public class Main {
         Topdown_LCS topdownLcs = new Topdown_LCS();
         int topdownLCSLength = topdownLcs.longestCommonSubsequence(text1, text2, m_LCS, n_LCS);
         System.out.println("Length of Longest Common Subsequence using Top-down approach: " + topdownLCSLength);
+
+        // --------------------------------------------------------------------------
+        System.out.println("--------------------------------------------------------------------------");
+        // --------------------------------------------------------------------------
+
+        // Testing Longest Common Substring
+        String s1 = "abcabcdede"; // String 1 for Substring
+        String s2 = "bcdaqred"; // String 2 for Substring
+        int m_LCStr = s1.length(); // Length of s1
+        int n_LCStr = s2.length(); // Length of s2
+
+        Longest_common_substring longestCommonSubstring = new Longest_common_substring();
+        int longestCommonSubstringLength = longestCommonSubstring.longestCommonSubstr(s1, s2, m_LCStr, n_LCStr);
+        System.out.println("Length of Longest Common Substring: " + longestCommonSubstringLength);
+
+        // --------------------------------------------------------------------------
+
+        
     }
 }
