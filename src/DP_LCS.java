@@ -84,5 +84,16 @@ public class DP_LCS {
         Longest_palindromic_subsequence longestPalindromicSubsequence = new Longest_palindromic_subsequence();
         int longestPalindromicSubsequenceLength = longestPalindromicSubsequence.longestPalindromeSubseq(s, s_len);
         System.out.println("Length of Longest Palindromic Subsequence: "+longestPalindromicSubsequenceLength);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Minimum Number of Deletion in a String to Make it a Palindrome
+
+        String str = "aebcbda";
+        int str_len = str.length();
+
+        Minimum_deletion_to_make_string_palindrome minimumDeletionToMakeStringPalindrome = new Minimum_deletion_to_make_string_palindrome();
+        int minimumDeletionToMakeStringPalindromeLength = minimumDeletionToMakeStringPalindrome.minDeletionToPalindrome(str, str_len);
+        System.out.println("Minimum Number of Deletion to make string Palindrome: "+minimumDeletionToMakeStringPalindromeLength);
     }
 }
