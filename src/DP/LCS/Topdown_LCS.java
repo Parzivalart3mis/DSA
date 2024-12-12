@@ -7,16 +7,16 @@ public class Topdown_LCS {
 
         // Initialize the base case:
         // If either string is empty (i == 0 or j == 0), the LCS is 0.
-        for (int i = 0; i <= m; i++) {
+        for (int i = 0; i < m + 1; i++) {
             t[i][0] = 0; // First column (text2 is empty)
         }
-        for (int j = 0; j <= n; j++) {
+        for (int j = 0; j < n + 1; j++) {
             t[0][j] = 0; // First row (text1 is empty)
         }
 
         // Fill the table using a bottom-up approach.
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
+        for (int i = 1; i < m + 1; i++) {
+            for (int j = 1; j < n + 1; j++) {
                 // If the current characters of both strings match:
                 if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
                     // Add 1 to the LCS of the previous characters (diagonal value).

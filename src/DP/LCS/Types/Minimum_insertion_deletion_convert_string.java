@@ -12,19 +12,6 @@ public class Minimum_insertion_deletion_convert_string {
         for (int i = 0; i < m + 1; i++) {
             t[i][0] = 0;
         }
-  // Fill the rest of the table using dynamic programming approach
-        for (int i = 1; i < m + 1; i++) {
-            for (int j = 1; j < n + 1; j++) {
-                // If characters match, add 1 to the previous diagonal value
-                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-                    t[i][j] = 1 + t[i-1][j-1];
-                }
-                // If characters don't match, take the maximum from left or top cell
-                else {
-                    t[i][j] = Math.max(t[i-1][j], t[i][j-1]);
-                }
-            }
-        }
         // Initialize the first row of the DP table (when str1 is empty, LCS length is 0)
         for (int j = 0; j < n + 1; j++) {
             t[0][j] = 0;

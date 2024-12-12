@@ -1,4 +1,5 @@
 import DP.LCS.*;
+import DP.LCS.Palindrome.*;
 import DP.LCS.Types.*;
 
 public class DP_LCS {
@@ -65,7 +66,6 @@ public class DP_LCS {
         // --------------------------------------------------------------------------
 
         // Testing Minimum Number of Insertion and Deletion to Convert String "a" to String "b"
-
         String a = "heap";
         String b = "pea";
         int a_len = a.length();
@@ -74,5 +74,15 @@ public class DP_LCS {
         Minimum_insertion_deletion_convert_string minimumInsertionDeletionConvertString = new Minimum_insertion_deletion_convert_string();
         int minimumNumInsertionDeletion = minimumInsertionDeletionConvertString.minOperations(a, b, a_len, b_len);
         System.out.println("Minimum Number of Insertion and Deletion: "+minimumNumInsertionDeletion);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Longest Palindromic Subsequence
+        String s = "agbcba";
+        int s_len = s.length();
+
+        Longest_palindromic_subsequence longestPalindromicSubsequence = new Longest_palindromic_subsequence();
+        int longestPalindromicSubsequenceLength = longestPalindromicSubsequence.longestPalindromeSubseq(s, s_len);
+        System.out.println("Length of Longest Palindromic Subsequence: "+longestPalindromicSubsequenceLength);
     }
 }
