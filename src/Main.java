@@ -3,6 +3,7 @@ import DP.Knapsack.Types.*;
 import DP.Knapsack.Unbounded_Knapsack.*;
 import DP.LCS.*;
 import DP.LCS.Types.Longest_common_substring;
+import DP.LCS.Types.Minimum_insertion_deletion_convert_string;
 import DP.LCS.Types.Print_LCS;
 import DP.LCS.Types.Shortest_common_supersequence;
 
@@ -193,5 +194,18 @@ public class Main {
         Shortest_common_supersequence shortestCommonSupersequence = new Shortest_common_supersequence();
         int shortestCommonSuperstringLength = shortestCommonSupersequence.shortestCommonSupersequence(str1, str2, str1_len, str2_len);
         System.out.println("Length of Shortest Common Supersequence: " + shortestCommonSuperstringLength);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Minimum Number of Insertion and Deletion to Convert String "a" to String "b"
+
+        String a = "heap";
+        String b = "pea";
+        int a_len = a.length();
+        int b_len = b.length();
+
+        Minimum_insertion_deletion_convert_string minimumInsertionDeletionConvertString = new Minimum_insertion_deletion_convert_string();
+        int minimumNumInsertionDeletion = minimumInsertionDeletionConvertString.minOperations(a, b, a_len, b_len);
+        System.out.println("Minimum Number of Insertion and Deletion: "+minimumNumInsertionDeletion);
     }
 }
