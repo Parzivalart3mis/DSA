@@ -108,5 +108,16 @@ public class DP_LCS {
         Print_SCS printSCS = new Print_SCS();
         String scsResult = printSCS.print_SCS(scs_str1, scs_str2, scs_len1, scs_len2);
         System.out.println("Shortest Common Supersequence: " + scsResult);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Longest Repeating Subsequence
+
+        String str3 = "AABEBCDD";
+        int str3_len = str3.length();
+
+        Longest_repeating_subsequence longestRepeatingSubsequence = new Longest_repeating_subsequence();
+        int longestRepeatingSubsequenceLength = longestRepeatingSubsequence.LongestRepeatingSubsequence(str3, str3_len);
+        System.out.println("Length of Longest Repeating Subsequence: " + longestRepeatingSubsequenceLength);
     }
 }
