@@ -95,5 +95,18 @@ public class DP_LCS {
         Minimum_deletion_to_make_string_palindrome minimumDeletionToMakeStringPalindrome = new Minimum_deletion_to_make_string_palindrome();
         int minimumDeletionToMakeStringPalindromeLength = minimumDeletionToMakeStringPalindrome.minDeletionToPalindrome(str, str_len);
         System.out.println("Minimum Number of Deletion to make string Palindrome: "+minimumDeletionToMakeStringPalindromeLength);
+
+        // --------------------------------------------------------------------------
+
+        // Testing Printing SCS
+
+        String scs_str1 = "acbcf";
+        String scs_str2 = "abcdaf";
+        int scs_len1 = scs_str1.length();
+        int scs_len2 = scs_str2.length();
+
+        Print_SCS printSCS = new Print_SCS();
+        String scsResult = printSCS.print_SCS(scs_str1, scs_str2, scs_len1, scs_len2);
+        System.out.println("Shortest Common Supersequence: " + scsResult);
     }
 }
