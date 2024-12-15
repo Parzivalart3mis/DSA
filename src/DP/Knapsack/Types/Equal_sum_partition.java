@@ -11,7 +11,7 @@ public class Equal_sum_partition {
             sum = sum + arr[i];
         }
 
-        // If the total sum is odd, it is impossible to partition into two equal subsets
+        // If the total sum is odd, it is impossible to partition into two equal subsets (because total sum is 2 * req_sum)
         if (sum % 2 != 0)
             return false;
 
