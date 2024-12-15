@@ -109,7 +109,7 @@ public class DP_Knapsack {
 
         // Coin Change Problem 1: Maximum number of ways to make a sum
         int[] coinDenominations = {1, 2, 3}; // Coin denominations
-        int targetAmount = 5; // Target sum to achieve
+        int targetAmount = 4; // Target sum to achieve
 
         Coin_change_1 coinChange = new Coin_change_1();
         int numWays = coinChange.maxCoinChange(coinDenominations, targetAmount);
@@ -120,7 +120,7 @@ public class DP_Knapsack {
 
         // Coin Change Problem 2: Minimum number of coins to make a sum
         int[] coinDenominations2 = {1, 2, 3}; // Coin denominations
-        int targetAmount2 = 5; // Target sum to achieve
+        int targetAmount2 = 4; // Target sum to achieve
 
         Coin_change_2 coinChange2 = new Coin_change_2();
         int minCoins = coinChange2.minCoinChange(coinDenominations2, targetAmount2);

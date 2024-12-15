@@ -1,5 +1,4 @@
 package DP.Knapsack;
-import static java.lang.Math.max;
 
 //Recursion
 public class Recursion_knapsack {
@@ -8,7 +7,7 @@ public class Recursion_knapsack {
             return 0;
         }
         if (wt[n - 1] <= w) {
-            return max(val[n - 1] + knapsack(wt, val, w - wt[n - 1], n - 1), knapsack(wt, val, w, n - 1));
+            return Math.max(val[n - 1] + knapsack(wt, val, w - wt[n - 1], n - 1), knapsack(wt, val, w, n - 1));
         } else {
             return knapsack(wt, val, w, n - 1);
         }
