@@ -42,9 +42,9 @@ public class Minimum_subset_sum_diff {
             }
         }
 
-        // Find all subset sums up to half the total sum
+        // Find all subset sums up to half the total sum (Since S1 + S2 = range, therefore S2 = range - S1, so we have to calculate range - 2*S1 later)
         for (int j = 1; j <= range / 2; j++) {
-            if (t[n][j]) { // Check if subset with sum 'j' is possible
+            if (t[n][j]) { // Check if subset with n elements with sum 'j' is possible
                 arr.add(j); // Add it to the list of possible subset sums
             }
         }
