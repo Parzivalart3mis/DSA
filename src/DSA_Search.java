@@ -1,12 +1,12 @@
+import DSA.Search.Binary_search;
 import DSA.Search.Linear_search;
 
 public class DSA_Search {
     public static void main(String[] args) {
-        // Testing Top-down approach
-        int[] arr = {23, 45, 1, 2, 8, 19, -3, 16, -11, 18};
         Linear_search linear_search = new Linear_search();
 
         // Linear Search Test
+        int[] arr = {23, 45, 1, 2, 8, 19, -3, 16, -11, 18};
         boolean linearSearchResult = linear_search.linearSearch(arr, 19);
         if (linearSearchResult) {
             System.out.println("Element found");
@@ -50,8 +50,46 @@ public class DSA_Search {
         };
         int maxWealth = linear_search.maximumWealth(accounts);
         System.out.println("Maximum wealth: " + maxWealth);
+
         // --------------------------------------------------------------------------
         System.out.println("--------------------------------------------------------------------------");
         // --------------------------------------------------------------------------
+
+        Binary_search binarySearch = new Binary_search();
+
+        // Testing Binary Search
+        int[] numsAsc = {1, 3, 5, 7, 9, 11, 13, 15};
+        int target = 7;
+        int result = binarySearch.binarySearch(numsAsc, target);
+        if (result != -1) {
+            System.out.println("Binary Search: Element found at index " + result);
+        } else {
+            System.out.println("Binary Search: Element not found.");
+        }
+
+        // Testing Order-Agnostic Binary Search (Ascending Order)
+        int[] numsAscOrder = {2, 4, 6, 8, 10, 12, 14};
+        target = 8;
+        result = binarySearch.orderAgnosticBinarySearch(numsAscOrder, target);
+        if (result != -1) {
+            System.out.println("Order-Agnostic Binary Search (Ascending): Element found at index " + result);
+        } else {
+            System.out.println("Order-Agnostic Binary Search (Ascending): Element not found.");
+        }
+
+        // Testing Order-Agnostic Binary Search (Descending Order)
+        int[] numsDescOrder = {15, 13, 11, 9, 7, 5, 3};
+        target = 9;
+        result = binarySearch.orderAgnosticBinarySearch(numsDescOrder, target);
+        if (result != -1) {
+            System.out.println("Order-Agnostic Binary Search (Descending): Element found at index " + result);
+        } else {
+            System.out.println("Order-Agnostic Binary Search (Descending): Element not found.");
+        }
+
+        // --------------------------------------------------------------------------
+        System.out.println("--------------------------------------------------------------------------");
+        // --------------------------------------------------------------------------
+
     }
 }
