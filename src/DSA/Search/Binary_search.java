@@ -18,7 +18,7 @@ public class Binary_search {
                 return mid;
             }
         }
-        return -1; // Nothing found, hence, returning -1;
+        return -1; // Nothing found, hence, returning -1
     }
 
     public int orderAgnosticBinarySearch(int[] nums, int target) {

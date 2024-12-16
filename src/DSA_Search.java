@@ -1,4 +1,6 @@
 import DSA.Search.Binary_search;
+import DSA.Search.Binary_search_ceiling;
+import DSA.Search.Binary_search_floor;
 import DSA.Search.Linear_search;
 
 public class DSA_Search {
@@ -91,5 +93,87 @@ public class DSA_Search {
         System.out.println("--------------------------------------------------------------------------");
         // --------------------------------------------------------------------------
 
+
+        Binary_search_ceiling binary_search_ceiling = new Binary_search_ceiling();
+
+        // Test 1: Finding the ceiling of a target number
+        int[] array = {2, 3, 5, 9, 14, 16, 18};
+        int lookupValue = 15;
+        int ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
+        if (ceilingIndex < array.length) {
+            System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
+        } else {
+            System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");
+        }
+
+        // Test 2: Target is smaller than the smallest element
+        lookupValue = 1;
+        ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
+        if (ceilingIndex < array.length) {
+            System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
+        } else {
+            System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");
+        }
+
+        // Test 3: Target is larger than the largest element
+        lookupValue = 20;
+        ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
+        if (ceilingIndex < array.length) {
+            System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
+        } else {
+            System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");
+        }
+
+        // Test 4: Target exists in the array
+        lookupValue = 9;
+        ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
+        if (ceilingIndex < array.length) {
+            System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
+        } else {
+            System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");
+        }
+
+        // --------------------------------------------------------------------------
+        System.out.println("--------------------------------------------------------------------------");
+        // --------------------------------------------------------------------------
+
+        Binary_search_floor binary_search_floor = new Binary_search_floor();
+
+        // Test 5: Finding the floor of a target number
+        int[] array2 = {2, 3, 5, 9, 14, 16, 18};
+        int lookupValue2 = 10;
+        int floorIndex = binary_search_floor.floor(array2, lookupValue2);
+        if (floorIndex >= 0 && floorIndex < array2.length) {
+            System.out.println("Floor of " + lookupValue2 + " is " + array2[floorIndex] + " at index " + floorIndex);
+        } else {
+            System.out.println("Floor of " + lookupValue2 + " does not exist in the array.");
+        }
+
+        // Test 6: Target is smaller than the smallest element
+        lookupValue2 = 1;
+        floorIndex = binary_search_floor.floor(array2, lookupValue2);
+        if (floorIndex >= 0 && floorIndex < array2.length) {
+            System.out.println("Floor of " + lookupValue2 + " is " + array2[floorIndex] + " at index " + floorIndex);
+        } else {
+            System.out.println("Floor of " + lookupValue2 + " does not exist in the array.");
+        }
+
+        // Test 7: Target is larger than the largest element
+        lookupValue2 = 15;
+        floorIndex = binary_search_floor.floor(array2, lookupValue2);
+        if (floorIndex >= 0 && floorIndex < array2.length) {
+            System.out.println("Floor of " + lookupValue2 + " is " + array2[floorIndex] + " at index " + floorIndex);
+        } else {
+            System.out.println("Floor of " + lookupValue2 + " does not exist in the array.");
+        }
+
+        // Test 4: Target exists in the array
+        lookupValue2 = 11;
+        floorIndex = binary_search_floor.floor(array2, lookupValue2);
+        if (floorIndex >= 0 && floorIndex < array2.length) {
+            System.out.println("Floor of " + lookupValue2 + " is " + array2[floorIndex] + " at index " + floorIndex);
+        } else {
+            System.out.println("Floor of " + lookupValue2 + " does not exist in the array.");
+        }
     }
 }
