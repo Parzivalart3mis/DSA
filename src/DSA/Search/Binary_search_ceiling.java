@@ -8,15 +8,15 @@ public class Binary_search_ceiling {
         while (start <= end) {
             // int mid = (start + end) / 2; // This may exceed the Integer range, hence we can use below formula
             int mid = start + (end - start) / 2; // This formula prevents integer overflow when calculating the midpoint, which can happen with (start + end) / 2 for large values of start and end
-            // If target is greater than mid element, the ceiling must be in the right half
+            // If target is greater than mid-element, the ceiling must be in the right half
             if (target > nums[mid]) {
                 start = mid + 1;
             }
-            // If target is smaller than mid element, the ceiling must be in the left half
+            // If target is smaller than mid-element, the ceiling must be in the left half
             else if (target < nums[mid]) {
                 end = mid - 1;
             }
-            // If target is equal to mid element, return the mid index as the ceiling
+            // If target is equal to mid-element, return the mid-index as the ceiling
             else { // target == nums[mid]
                 return mid;
             }
