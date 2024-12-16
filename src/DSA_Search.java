@@ -100,7 +100,7 @@ public class DSA_Search {
         int[] array = {2, 3, 5, 9, 14, 16, 18};
         int lookupValue = 15;
         int ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
-        if (ceilingIndex < array.length) {
+        if (ceilingIndex != -1) {
             System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
         } else {
             System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");
@@ -109,7 +109,7 @@ public class DSA_Search {
         // Test 2: Target is smaller than the smallest element
         lookupValue = 1;
         ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
-        if (ceilingIndex < array.length) {
+        if (ceilingIndex != -1) {
             System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
         } else {
             System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");
@@ -118,7 +118,7 @@ public class DSA_Search {
         // Test 3: Target is larger than the largest element
         lookupValue = 20;
         ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
-        if (ceilingIndex < array.length) {
+        if (ceilingIndex != -1) {
             System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
         } else {
             System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");
@@ -127,7 +127,7 @@ public class DSA_Search {
         // Test 4: Target exists in the array
         lookupValue = 9;
         ceilingIndex = binary_search_ceiling.ceiling(array, lookupValue);
-        if (ceilingIndex < array.length) {
+        if (ceilingIndex != -1) {
             System.out.println("Ceiling of " + lookupValue + " is " + array[ceilingIndex] + " at index " + ceilingIndex);
         } else {
             System.out.println("Ceiling of " + lookupValue + " does not exist in the array.");

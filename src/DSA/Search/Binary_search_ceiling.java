@@ -2,6 +2,9 @@ package DSA.Search;
 
 public class Binary_search_ceiling {
     public int ceiling(int[] nums, int target) {
+        if (target > nums[nums.length-1]) {
+            return -1;
+        }
         int start = 0;
         int end = nums.length - 1;
         // Perform binary search to find the ceiling of the target
