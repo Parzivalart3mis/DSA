@@ -1,6 +1,6 @@
 package DSA.Search;
 
-public class Binary_search_smallestLetter {
+public class Binary_search_SmallestLetter {
     public char nextGreatestLetter(char[] letters, char target) {
         int start = 0;
         int end = letters.length - 1;

@@ -1,6 +1,6 @@
 package DSA.Search;
 
-public class Binary_search_floor {
+public class Binary_search_Floor {
     public int floor(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;

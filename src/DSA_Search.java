@@ -1,6 +1,6 @@
 import DSA.Search.Binary_search;
-import DSA.Search.Binary_search_ceiling;
-import DSA.Search.Binary_search_floor;
+import DSA.Search.Binary_search_Ceiling;
+import DSA.Search.Binary_search_Floor;
 import DSA.Search.Linear_search;
 
 public class DSA_Search {
@@ -94,7 +94,7 @@ public class DSA_Search {
         // --------------------------------------------------------------------------
 
 
-        Binary_search_ceiling binary_search_ceiling = new Binary_search_ceiling();
+        Binary_search_Ceiling binary_search_ceiling = new Binary_search_Ceiling();
 
         // Test 1: Finding the ceiling of a target number
         int[] array = {2, 3, 5, 9, 14, 16, 18};
@@ -137,7 +137,7 @@ public class DSA_Search {
         System.out.println("--------------------------------------------------------------------------");
         // --------------------------------------------------------------------------
 
-        Binary_search_floor binary_search_floor = new Binary_search_floor();
+        Binary_search_Floor binary_search_floor = new Binary_search_Floor();
 
         // Test 5: Finding the floor of a target number
         int[] array2 = {2, 3, 5, 9, 14, 16, 18};

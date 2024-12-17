@@ -1,6 +1,6 @@
 package DSA.Search;
 
-public class Binary_search_ceiling {
+public class Binary_search_Ceiling {
     public int ceiling(int[] nums, int target) {
         if (target > nums[nums.length-1]) {
             return -1;
