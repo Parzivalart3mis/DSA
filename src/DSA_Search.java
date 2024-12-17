@@ -1,7 +1,4 @@
-import DSA.Search.Binary_search;
-import DSA.Search.Binary_search_Ceiling;
-import DSA.Search.Binary_search_Floor;
-import DSA.Search.Linear_search;
+import DSA.Search.*;
 
 public class DSA_Search {
     public static void main(String[] args) {
@@ -174,6 +171,22 @@ public class DSA_Search {
             System.out.println("Floor of " + lookupValue2 + " is " + array2[floorIndex] + " at index " + floorIndex);
         } else {
             System.out.println("Floor of " + lookupValue2 + " does not exist in the array.");
+        }
+
+        // --------------------------------------------------------------------------
+        System.out.println("--------------------------------------------------------------------------");
+        // --------------------------------------------------------------------------
+
+        Binary_search_FindPositionInInfiniteArray binary_search_findPositionInInfiniteArray = new Binary_search_FindPositionInInfiniteArray();
+        int[] array3 = {3, 5, 7, 9, 10, 90, 100, 130, 140, 160, 170};
+        int lookupValue3 = 10;
+
+        int pos = binary_search_findPositionInInfiniteArray.findPositionInInfiniteArray(array3, lookupValue3);
+
+        if (pos != -1) {
+            System.out.println("Element " + lookupValue3 + " found at index " + pos);
+        } else {
+            System.out.println("Element " + lookupValue3 + " not found in the array.");
         }
     }
 }
