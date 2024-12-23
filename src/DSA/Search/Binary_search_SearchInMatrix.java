@@ -1,6 +1,6 @@
 package DSA.Search;
 
-public class Binary_search_BinarySearchInMatrix {
+public class Binary_search_SearchInMatrix {
     public int[] searchRange(int[][] matrix, int target) {
         int row = 0;
         int col = matrix[0].length - 1;

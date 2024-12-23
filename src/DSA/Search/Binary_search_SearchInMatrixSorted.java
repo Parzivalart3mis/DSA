@@ -1,6 +1,6 @@
 package DSA.Search;
 
-public class Binary_search_SearchInSortedMatrix {
+public class Binary_search_SearchInMatrixSorted {
     // Search in the row provided, between the columns provided
     public int[] binary_search(int[][] matrix, int row, int cStart, int cEnd,  int target) {
         while (cStart <= cEnd) {
