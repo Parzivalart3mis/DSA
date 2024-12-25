@@ -1,5 +1,7 @@
 package DSA.Sort;
 
+// This code is for range [1, n]
+
 public class Cycle_sort {
     public void cycleSort(int[] arr) {
         int n= arr.length;
