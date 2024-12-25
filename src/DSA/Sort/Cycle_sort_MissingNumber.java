@@ -5,11 +5,11 @@ public class Cycle_sort_MissingNumber {
         int n = nums.length;
         int i = 0;
         while (i < n) {
-            int correct = nums[i];
-            if (nums[i] < n && nums[i] != nums[correct]) {
+            int correct_index = nums[i];
+            if (nums[i] < n && nums[i] != nums[correct_index]) {
                 int temp = nums[i];
-                nums[i] = nums[correct];
-                nums[correct] = temp;
+                nums[i] = nums[correct_index];
+                nums[correct_index] = temp;
             }
             else {
                 i++;

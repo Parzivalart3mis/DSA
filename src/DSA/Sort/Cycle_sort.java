@@ -7,11 +7,11 @@ public class Cycle_sort {
         int n= arr.length;
         int i  = 0;
         while (i < n) {
-            int correct = arr[i] - 1; // Correct index, let's say element is 4, then correct index of 4 is 4 - 1 = 3
-            if (arr[i] != arr[correct]) {
+            int correct_index = arr[i] - 1; // Correct index, let's say element is 4, then correct index of 4 is 4 - 1 = 3
+            if (arr[i] != arr[correct_index]) {
                 int temp = arr[i];
-                arr[i] = arr[correct];
-                arr[correct] = temp;
+                arr[i] = arr[correct_index];
+                arr[correct_index] = temp;
             }
             else {
                 i++;
