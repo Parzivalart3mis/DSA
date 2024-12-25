@@ -1,6 +1,6 @@
 package DSA.Sort;
 
-public class Cycle_sort_Find_Duplicate_Number {
+public class Cycle_sort_FindDuplicateNumber {
     public int findDuplicate(int[] nums) {
         int n = nums.length;
         int i = 0;
