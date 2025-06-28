@@ -23,12 +23,12 @@ public class Binary_search_SearchInRotatedSortedArrayWithDuplicateElements {
             if (nums[start] == nums[mid] && nums[mid] == nums[end]) {
                 // Skip the duplicates
 
-                // Check if start is pivot
+                // First check if start is pivot, and if not, then skip start
                 if (nums[start] > nums[start + 1]) {
                     return start;
                 }
                 start++;
-                // Check if end is pivot
+                // First check if end is pivot, and if not, then skip end
                 if (nums[end] < nums[end - 1]) {
                     return end;
                 }
