@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion.Easy;
 
 public class FibonacciNumber {
     public int fib(int n) {

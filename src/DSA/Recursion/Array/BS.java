@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion.Array;
 
 public class BS {
     static int search(int[] arr, int target, int s, int e) {
