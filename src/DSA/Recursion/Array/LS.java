@@ -27,4 +27,19 @@ public class LS {
         }
         return helper(arr, i + 1, x);
     } 
+    static ArrayList<Integer> findAllIndex(int[] arr, int target, int index) {
+        ArrayList<Integer> list = new ArrayList<>();
+        if (index == arr.length) {
+            return list;
+        }
+        // This will contain answer for that function call only
+        if(arr[index] == target) {
+            list.add(index);
+        }
+        ArrayList<Integer> ansFromBelowCalls = return findAllIndex(arr, target, index + 1);
+
+        list.addAll(ansFromBelowCalls);
+        
+        return list;
+    }
 }
