@@ -17,7 +17,7 @@ public class BubbleSort {
             bubble(arr, r, c + 1);
         }
         else {
-            bubble(arr, r - 1, 0)
+            bubble(arr, r - 1, 0);
         }
 
     }

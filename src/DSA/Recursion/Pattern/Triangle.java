@@ -11,7 +11,7 @@ public class Triangle {
         }
         else {
             System.out.println();
-            triangle(r - 1, 0)
+            triangle(r - 1, 0);
         }
 
     }
