@@ -4,13 +4,13 @@ public class LL {
 
     private Node head;
     private Node tail;
-
     private int size;
+
     public LL() {
         this.size = 0;
     }
 
-    public void insertAtFirst(int val) {
+    public void insertFirst(int val) {
         Node node = new Node(val);
         node.next = head;
         head = node;
@@ -19,6 +19,17 @@ public class LL {
             tail = head;
         }
         size += 1;
+    }
+
+    public void insertLast(int val) {
+        Node node = new Node(val);
+        if (tail == null) {
+            insertFirst(val);
+            return;
+        }
+        tail.next = node;
+        tail = node;
+        size++;
     }
 
     public void display() {
