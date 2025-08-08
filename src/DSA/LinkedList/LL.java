@@ -52,6 +52,14 @@ public class LL {
         size++;
     }
 
+    public Node get (int index) {
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
     public int deleteFirst() {
         int value = head.value;
         head = head.next;
@@ -62,11 +70,16 @@ public class LL {
         return value;
     }
 
-    public void deleteLast() {
-        if (size == 0) {
-            return;
+    public int deleteLast() {
+        if (size <= 1) {
+            return deleteFirst();
         }
-
+        Node secondLast = get(size - 2);
+        int value = tail.value;
+        tail = secondLast;
+        tail.next = null;
+        size--;
+        return value;
     }
 
     public void display() {
