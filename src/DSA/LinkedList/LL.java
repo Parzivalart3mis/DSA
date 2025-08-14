@@ -60,6 +60,17 @@ public class LL {
         return node;
     }
 
+    public Node find (int value) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+        return node;
+    }
+
     public int deleteFirst() {
         int value = head.value;
         head = head.next;
@@ -80,6 +91,20 @@ public class LL {
         tail.next = null;
         size--;
         return value;
+    }
+
+    public int delete (int index) {
+        if (index == 0) {
+            return deleteFirst();
+        }
+        if (index == size - 1) {
+            return deleteLast();
+        }
+        Node prev = get(index - 1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+        size--;
+        return val;
     }
 
     public void display() {
