@@ -27,5 +27,16 @@ public class Main {
         list2.insertLast(99);
         list2.insertAfter(8, 65);
         list2.display();
+
+        System.out.println("********************************************************");
+
+        CLL list3 = new CLL();
+        list3.insert(23);
+        list3.insert(3);
+        list3.insert(19);
+        list3.insert(75);
+        list3.display();
+        list3.delete(19);
+        list3.display();
     }
 }
