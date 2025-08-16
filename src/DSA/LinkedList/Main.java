@@ -25,13 +25,7 @@ public class Main {
         list2.insertFirst(8);
         list2.insertFirst(17);
         list2.insertLast(99);
-//        list2.insert(100, 3);
+        list2.insertAfter(8, 65);
         list2.display();
-//        System.out.println(list2.deleteFirst());
-//        list2.display();
-//        System.out.println(list2.deleteLast());
-//        list2.display();
-//        System.out.println(list2.delete(2));
-//        list2.display();
     }
 }
