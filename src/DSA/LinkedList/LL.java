@@ -144,4 +144,63 @@ public class LL {
             this.next = next;
         }
     }
+
+    // Questions
+    public Node deleteDuplicates(Node head) {
+        Node temp;
+        temp = head;
+        while (temp != null) {
+            if (temp.next != null && temp.value == temp.next.value) {
+                temp.next = temp.next.next;
+                size--;
+            }
+            else {
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
+
+    public static LL mergeTwoLists(LL first, LL second){
+        Node f = first.head;
+        Node s = second.head;
+
+        LL ans = new LL();
+
+        while (f != null && s != null){
+            if (f.value < s.value) {
+                ans.insertLast(f.value);
+                f = f.next;
+            }
+            else {
+                ans.insertLast(s.value);
+                s = s.next;
+            }
+        }
+
+        while (f != null){
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+        while (s != null){
+            ans.insertLast(s.value);
+            s = s.next;
+        }
+        return ans;
+    }
+
+    public boolean hasCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (fast == slow) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
