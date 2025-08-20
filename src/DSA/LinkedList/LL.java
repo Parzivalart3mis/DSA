@@ -226,4 +226,39 @@ public class LL {
         }
         return 0;
     }
+
+    // Detect the start of cycle
+    public Node detectCycle(Node head) {
+        int length = 0;
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (fast == slow) {
+                length = lengthCycle(slow);
+                break;
+            }
+        }
+
+        if (length == 0) {
+            return null;
+        }
+
+        // Find the start node
+        Node f = head;
+        Node s = head;
+        while (length > 0) {
+            s = s.next;
+            length--;
+        }
+        // Keep moving both forward, and they will meet at cycle start
+        while (f != s) {
+            f = f.next;
+            s = s.next;
+        }
+        return s;
+    }
 }
