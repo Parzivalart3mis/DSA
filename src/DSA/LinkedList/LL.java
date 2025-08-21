@@ -145,143 +145,29 @@ public class LL {
         }
     }
 
-    // Questions
-    public Node deleteDuplicates(Node head) {
-        Node temp;
-        temp = head;
-        while (temp != null) {
-            if (temp.next != null && temp.value == temp.next.value) {
-                temp.next = temp.next.next;
-                size--;
-            }
-            else {
-                temp = temp.next;
-            }
-        }
-        return head;
-    }
-
-    public static LL mergeTwoLists(LL first, LL second){
+    public static LL mergeTwoLists(LL first, LL second) {
         Node f = first.head;
         Node s = second.head;
 
         LL ans = new LL();
 
-        while (f != null && s != null){
+        while (f != null && s != null) {
             if (f.value < s.value) {
                 ans.insertLast(f.value);
                 f = f.next;
-            }
-            else {
+            } else {
                 ans.insertLast(s.value);
                 s = s.next;
             }
         }
 
-        while (f != null){
+        while (f != null) {
             ans.insertLast(f.value);
             f = f.next;
         }
-        while (s != null){
+        while (s != null) {
             ans.insertLast(s.value);
             s = s.next;
-        }
-        return ans;
-    }
-
-    public boolean hasCycle(Node head) {
-        Node fast = head;
-        Node slow = head;
-
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-
-            if (fast == slow) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // Find the length of the cycle
-    public int lengthCycle(Node head) {
-        Node fast = head;
-        Node slow = head;
-
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-
-            if (fast == slow) {
-                // Calculate the length
-                Node temp = slow;
-                int length = 0;
-                do {
-                    temp = temp.next;
-                    length++;
-                } while (temp != slow);
-                return length;
-            }
-        }
-        return 0;
-    }
-
-    // Detect the start of cycle
-    public Node detectCycle(Node head) {
-        int length = 0;
-        Node fast = head;
-        Node slow = head;
-
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-
-            if (fast == slow) {
-                length = lengthCycle(slow);
-                break;
-            }
-        }
-
-        if (length == 0) {
-            return null;
-        }
-
-        // Find the start node
-        Node f = head;
-        Node s = head;
-        while (length > 0) {
-            s = s.next;
-            length--;
-        }
-        // Keep moving both forward, and they will meet at cycle start
-        while (f != s) {
-            f = f.next;
-            s = s.next;
-        }
-        return s;
-    }
-
-    public boolean isHappy(int n) {
-        int slow = n;
-        int fast = n;
-
-        do {
-            slow = findsquare(slow);
-            fast = findsquare(findsquare(fast));
-        } while (slow != fast);
-
-        if (slow == 1) {
-            return true;
-        }
-        return false;
-    }
-    private int findsquare(int number) {
-        int ans = 0;
-        while (number > 0) {
-            int rem = number % 10;
-            ans = ans + (rem * rem);
-            number /= 10;
         }
         return ans;
     }
