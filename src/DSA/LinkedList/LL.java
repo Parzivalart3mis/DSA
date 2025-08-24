@@ -213,4 +213,19 @@ public class LL {
             bubblesort(row - 1, 0);
         }
     }
+
+    // Recursion Reverse
+    private void reverse (Node node) {
+        if (node == tail) {
+            head = tail;
+            return;
+        }
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
+    // In-place reversal of a linked list
+
 }
