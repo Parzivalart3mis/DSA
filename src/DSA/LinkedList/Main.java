@@ -18,6 +18,14 @@ public class Main {
         list.display();
          list.insertRec(88,2);
         list.display();
+        System.out.println("Sorting the list");
+        LL sortList = new LL();
+        for (int i = 7; i > 0 ; i--) {
+            sortList.insertLast(i);
+        }
+        sortList.display();
+        sortList.bubblesort();
+        sortList.display();
 
         System.out.println("********************************************************");
 
