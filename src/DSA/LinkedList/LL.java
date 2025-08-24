@@ -227,5 +227,25 @@ public class LL {
     }
 
     // In-place reversal of a linked list
+    public void reverse () {
+        if (size < 2) {
+            return;
+        }
+        if (head == null) {
+            return;
+        }
+        Node prev = null;
+        Node present = head;
+        Node next = present.next;
 
+        while (present != null) {
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null) {
+                next = next.next;
+            }
+        }
+        head = prev;
+    }
 }
