@@ -131,7 +131,7 @@ public class InterviewQuestions {
             return ans;
         }
 
-        public ListNode middleListNode(ListNode head) {
+        public ListNode dleListNode(ListNode head) {
             ListNode f = head;
             ListNode s = head;
 
