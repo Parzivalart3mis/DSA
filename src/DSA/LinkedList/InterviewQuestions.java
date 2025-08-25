@@ -131,7 +131,7 @@ public class InterviewQuestions {
             return ans;
         }
 
-        public ListNode dleListNode(ListNode head) {
+        public ListNode middleNode(ListNode head) {
             ListNode f = head;
             ListNode s = head;
 
@@ -140,6 +140,25 @@ public class InterviewQuestions {
                 f = f.next.next;
             }
             return s;
+        }
+
+        public ListNode reverseList(ListNode head) {
+            if (head == null) {
+                return head;
+            }
+            ListNode prev = null;
+            ListNode present = head;
+            ListNode next = present.next;
+
+            while (present != null) {
+                present.next = prev;
+                prev = present;
+                present = next;
+                if (next != null) {
+                    next = next.next;
+                }
+            }
+            return prev;
         }
 
         public ListNode reverseBetween(ListNode head, int left, int right) {
@@ -179,6 +198,27 @@ public class InterviewQuestions {
         }
 
         public boolean isPalindrome(ListNode head) {
+            ListNode mid = middleNode(head);
+            ListNode headSecond = reverseList(mid);
+            ListNode rereverseHead = headSecond;
+
+            // Compare both the halves
+            while (head != null && headSecond != null) {
+                if (head.value != headSecond.value) {
+                    break;
+                }
+                head = head.next;
+                headSecond = headSecond.next;
+            }
+            reverseList(rereverseHead);
+
+            if (head == null || headSecond == null) {
+                return true;
+            }
+            return false; 
+        }
+
+        public void reorderList(ListNode head) {
 
         }
     }
