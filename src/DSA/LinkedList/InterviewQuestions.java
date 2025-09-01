@@ -242,5 +242,47 @@ public class InterviewQuestions {
                 hf.next = null;
             }
         }
+
+        // It is also reversing the < k end items -> Modify it accordingly
+        public ListNode reverseKGroup(ListNode head, int k) {
+            if (k <= 1 || head == null) {
+                return head;
+            }
+
+            // Skip the first left - 1 nodes
+            ListNode current = head;
+            ListNode prev = null;
+
+            while (true) {
+                ListNode last = prev;
+                ListNode newEnd = current;
+
+                // Reverse between left and right
+                ListNode next = current.next;
+                for (int i = 0; current != null && i < k; i++) {
+                    current.next = prev;
+                    prev = current;
+                    current = next;
+                    if (next != null) {
+                        next = next.next;
+                    }
+                }
+
+                if (last != null) {
+                    last.next = prev;
+                }
+                else {
+                    head = prev;
+                }
+                newEnd.next = current;
+
+                if (current == null) {
+                    break;
+                }
+
+                prev = newEnd;
+            }
+            return head;
+        }
     }
 }
