@@ -284,5 +284,47 @@ public class InterviewQuestions {
             }
             return head;
         }
+
+        public ListNode reverseAlternateKGroup(ListNode head, int k) {
+            if (k <= 1 || head == null) {
+                return head;
+            }
+
+            // Skip the first left - 1 nodes
+            ListNode current = head;
+            ListNode prev = null;
+
+            while (current != null) {
+                ListNode last = prev;
+                ListNode newEnd = current;
+
+                // Reverse between left and right
+                ListNode next = current.next;
+                for (int i = 0; current != null && i < k; i++) {
+                    current.next = prev;
+                    prev = current;
+                    current = next;
+                    if (next != null) {
+                        next = next.next;
+                    }
+                }
+
+                if (last != null) {
+                    last.next = prev;
+                }
+                else {
+                    head = prev;
+                }
+                newEnd.next = current;
+
+                // Skip the k nodes
+                for (int i = 0; current != null && i < k; i++) {
+                    prev = current;
+                    current = current.next;
+                }
+            }
+            return head;
+        }
+        
     }
 }
